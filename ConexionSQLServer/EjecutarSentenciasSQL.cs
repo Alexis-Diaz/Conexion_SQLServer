@@ -13,7 +13,7 @@ namespace ConexionSQLServer
 {
     class EjecutarSentenciasSQL
     {
-        //COMO SE CREA UNA CONEXION A SQL SERVER PASO A PASO
+        //COMO CREAR UNA CONEXION A SQL SERVER PASO A PASO
 
         //PASO 2: EJECUTAR SENTENCIAS SQL
 
@@ -55,7 +55,7 @@ namespace ConexionSQLServer
             //Se crea la instancia de SqlCommand, esta clase recibe uno a cuatro parámetros
             //en el constructor. Aqui se usaran dos.
             //Parametro 1: indica la intrucción sql.
-            //Parametro 2: indica la referencia de la conexión a usar.
+            //Parametro 2: indica la referencia de la conexión abierta a utilizar.
             SqlCommand sqlComandoInsert = new SqlCommand(comandoInsert, connection);
             SqlCommand sqlComandoSelect = new SqlCommand(comandoSelect, connection);
 
@@ -100,13 +100,14 @@ namespace ConexionSQLServer
                 //response siempre trae un solo objeto. Para acceder a sus propiedades, lo hacemos indicando
                 //entre corchetes el mismo nombre de campo que se encuetra en la tabla consultada.
                 string persona = response["NombrePersona"].ToString();
+                personas.Add(persona);//se asigna el valor a una lista 
                 Console.WriteLine(persona);
             }
 
 
 
 
-            //No debemos olvidar que debemos SIEMPRE cerrar la conexión para mantener la
+            //No debemos olvidar que SIEMPRE debemos cerrar la conexión para mantener la
             //seguridad en la comunicacion de la aplicacion y el servidor. Esto se hace despues de 
             //cada comando ejecutado. Aqui por fines didacticos se deja al final.
             connection.Close();

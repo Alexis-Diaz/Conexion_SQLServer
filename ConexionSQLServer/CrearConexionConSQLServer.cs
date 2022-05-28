@@ -13,14 +13,14 @@ namespace ConexionSQLServer
 {
     class CrearConexionConSQLServer
     {
-        //COMO SE CREA UNA CONEXION A SQL SERVER PASO A PASO
+        //COMO CREAR UNA CONEXION A SQL SERVER PASO A PASO
 
         //PASO 1: CREAR LA CONEXION
 
         //Para conectarnos a la base de datos lo primero que debemos hacer es conectarnos 
         //con el servidor. Para ello .NET pone a disposicion un conjunto de clases. La
         //primer clase que usaremos es SqlConnection. Para usarla debemos importar el espacio
-        //de nombres System.Data.SqlCliente;
+        //de nombres System.Data.SqlClient;
 
        
         public void CrearConexion()
